@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "LeSummari",
+    "minimum_chrome_version": "24.0.1307.0",
+    "version": "0.0.1",
+    "homepage_url": "https://sarahmorrisonsmith.com/",
+    "icons": {
+    },
+    "content_scripts": [
+    /*
+    CITE: freeCodeCamp
+    URL: https://www.freecodecamp.org/news/how-to-write-a-regular-expression-for-a-url/#:~:text=Here's%20a%20regex%20pattern%20that,%7B2%2C%7D(%5C.
+    HELP: learn how to use regular expresions to match to any website */
+    {
+        "matches": [
+            "*://*/*"
+        ],
+    "js": [
+    "scripts/jquery.min.js",
+    "scripts/reader.js"
+    ],
+    "css": ["css/reader.css"],
+    "run_at": "document_idle"
+    }
+    ]
+   }
