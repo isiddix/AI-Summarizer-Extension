@@ -1,4 +1,4 @@
-/* Name: Ilsaa Siddiqui, Chidera Uwakwe, Sebastian Favela, James Frazier
+/* Name: Ilsaa Siddiqui, Chidera Uwawake, Sebastian Favela, James Frazier
    Date: 11/12/23
    Beta Checkpoint
 
@@ -30,7 +30,6 @@ async function requestSummary(target_text, bulleted=false) {
         },
         body: JSON.stringify(requestPayload),
       });
-
     const data = await responsePayload.json();
     return data["summary"];
 }
@@ -93,13 +92,25 @@ function spacePresserChecker() {
     });
 }
 
+// old hover function
+// Adds hover effect to all appropriate DOM elements
+// function addHoverEffect() {
+//     $("*:not(body, html)").hover(function() {
+//         let object = $(this);
+//         object.addClass("highlight");},
+//         function() { $(this).removeClass("highlight"); });
+// }
+
 // Adds hover effect to all appropriate DOM elements
 function addHoverEffect() {
-    $("*:not(body, html)").hover(function() {
+    $("p").hover(function () {
         let object = $(this);
-        object.addClass("highlight");},
-        function() { $(this).removeClass("highlight"); });
+        object.addClass("highlight");
+    }, function () {
+        $(this).removeClass("highlight");
+    });
 }
+
 
 $(document).ready(function() {
     spacePresserChecker(); // Adds event listener ONCE to the document and will check for a space bar press
